@@ -1,0 +1,20 @@
+﻿@model CasgemApiConsume.Dtos.CategoryDtos.EditCategoryDto
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Kategori Güncelle</h1>
+
+
+<form method="post">
+
+    <input type="hidden" class="form-control" style="color:black !important" asp-for="CategoryId" />
+
+    <label>Kategori Adı</label>
+    <input type="text" class="form-control" style="color:black !important" asp-for="CategoryName" />
+
+    <a class="btn btn-danger" href="/Category/Index/">İptal</a>
+    <input type="submit" value="Ekle" class="btn btn-success" />
+
+</form>

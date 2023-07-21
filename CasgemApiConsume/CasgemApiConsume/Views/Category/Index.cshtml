@@ -1,0 +1,39 @@
+﻿@model List<CasgemApiConsume.Dtos.CategoryDtos.ResultCategoryDto>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Kategori Listesi</h1>
+
+<hr />
+
+<a href="/Category/AddCategory/" class="btn btn-success"> Ekle</a>
+
+<table class="table table-striped">
+
+    <tr>
+        <th>#</th>
+        <th>Kategori Adı</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <th>1</th>
+            <td>@i.CategoryName</td>
+            <td>
+                <a class="btn btn-danger" href="/Category/DeleteCategory/@i.CategoryId">Sil</a>
+            </td>
+
+            <td>
+                <a class="btn btn-warning" href="/Category/UpdateCategory/@i.CategoryId">Güncelle</a>
+            </td>
+        </tr>
+        
+    }
+
+</table>
+
+

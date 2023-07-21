@@ -1,0 +1,47 @@
+﻿@model List<CasgemApiConsume.Dtos.CustomerDtos.ResultCustomerDto>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h1>Müşteri Listesi</h1>
+
+<hr />
+
+<a href="/Customer/AddCustomer/" class="btn btn-success"> Ekle</a>
+
+<table class="table table-striped">
+
+    <tr>
+        <th>#</th>
+        <th>Müşteri Adı</th>
+        <th>Şehir</th>
+        <th></th>
+        <th></th>
+    </tr>
+
+    @{
+        int a = 1;
+    }
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <th>@a</th>
+            <td>@i.CustomerName</td>
+            <td>@i.CustomerCity</td>
+            <td>
+                <a class="btn btn-danger" href="/Customer/DeleteCustomer/@i.CustomerId">Sil</a>
+            </td>
+
+            <td>
+                <a class="btn btn-warning" href="/Customer/UpdateCustomer/@i.CustomerId">Güncelle</a>
+            </td>
+        </tr>
+
+        a++;
+
+    }
+
+</table>
+
+

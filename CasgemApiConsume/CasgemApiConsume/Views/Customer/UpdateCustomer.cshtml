@@ -1,0 +1,24 @@
+﻿@model CasgemApiConsume.Dtos.CustomerDtos.EditCustomerDto
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Müşteri Güncelle</h1>
+
+
+<form method="post">
+
+    <input type="hidden" class="form-control" style="color:black !important" asp-for="CustomerId" />
+
+    <label>Kategori Adı</label>
+    <input type="text" class="form-control" style="color:black !important" asp-for="CustomerName" />
+    <br />
+
+    <label>Şehir</label>
+    <input type="text" class="form-control" style="color:black !important" asp-for="CustomerCity" />
+    <br />
+    <a class="btn btn-danger" href="/Customer/Index/">İptal</a>
+    <input type="submit" value="Ekle" class="btn btn-success" />
+
+</form>
