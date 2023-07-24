@@ -10,58 +10,7 @@ namespace Casgem.ApıLayer.Controllers
     [ApiController]
     public class UserIlanController : ControllerBase
     {
-        //[HttpGet]
-        //public async Task<IActionResult> ListIlan()
-        //{
-        //    // MongoDB bağlantı adresi ve diğer ayarlar
-        //    string connectionString = "mongodb://localhost:27017";
-        //    MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl(connectionString));
-
-        //    // MongoClient oluşturma
-        //    MongoClient mongoClient = new MongoClient(settings);
-
-        //    // Veritabanına bağlanma
-        //    IMongoDatabase database = mongoClient.GetDatabase("CasgemEmlakApiDb"); // myDatabase yerine kendi veritabanı adınızı kullanın
-
-
-
-        //    //...
-
-        //    IMongoCollection<Ilanlar> collection = database.GetCollection<Ilanlar>("Ilanlar"); // myCollection yerine kendi koleksiyon adınızı kullanın
-
-        //    List<Ilanlar> documents = await collection.Find(x => true).ToListAsync();
-
-        //    return Ok(documents);
-  
-        //}
-
-        //[HttpPost]
-        //public async Task<IActionResult> AddIlan()
-        //{
-        //    string connectionString = "mongodb://localhost:27017";
-        //    MongoClientSettings settings = MongoClientSettings.FromUrl(new MongoUrl(connectionString));
-
-        //    // MongoClient oluşturma
-        //    MongoClient mongoClient = new MongoClient(settings);
-
-        //    // Veritabanına bağlanma
-        //    IMongoDatabase database = mongoClient.GetDatabase("CasgemEmlakApiDb"); // myDatabase yerine kendi veritabanı adınızı kullanın
-
-
-        //    IMongoCollection<Ilanlar> collection = database.GetCollection<Ilanlar>("Ilanlar"); // myCollection yerine kendi koleksiyon adınızı kullanın
-
-        //    Ilanlar documentToAdd = new Ilanlar
-        //    {
-        //        IlanAdi = "John Doe",
-        //        BinaYasi = 30,
-        //        // Diğer özellikleri de doldurabilirsiniz...
-        //    };
-
-        //    collection.InsertOne(documentToAdd);
-        //    return Ok(documentToAdd);
-        //}
-
-
+      
 
         private readonly MongoDbManager _mongoDbManager;
 
@@ -84,19 +33,19 @@ namespace Casgem.ApıLayer.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddIlan()
+        public async Task<IActionResult> AddIlan(Ilanlar p)
         {
             IMongoCollection<Ilanlar> collection = _mongoDbManager.Database.GetCollection<Ilanlar>("Ilanlar");
 
-            Ilanlar documentToAdd = new Ilanlar
-            {
-                IlanAdi = "John Doe",
-                BinaYasi = 30,
+            //Ilanlar documentToAdd = new Ilanlar
+            //{
+            //    IlanAdi = "John Doe",
+            //    BinaYasi = 30,
 
-            };
+            //};
 
-            collection.InsertOne(documentToAdd);
-            return Ok(documentToAdd);
+            collection.InsertOne(p);
+            return Ok(p);
         }
 
 

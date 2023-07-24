@@ -731,19 +731,6 @@
           "lib/net6.0/ZstdSharp.dll": {}
         }
       },
-      "Casgem.BusinessLayer/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "dependencies": {
-          "Casgem.DataAccessLayer": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Casgem.BusinessLayer.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Casgem.BusinessLayer.dll": {}
-        }
-      },
       "Casgem.DataAccessLayer/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2063,11 +2050,6 @@
         "zstdsharp.port.nuspec"
       ]
     },
-    "Casgem.BusinessLayer/1.0.0": {
-      "type": "project",
-      "path": "../Casgem.BusinessLayer/Casgem.BusinessLayer.csproj",
-      "msbuildProject": "../Casgem.BusinessLayer/Casgem.BusinessLayer.csproj"
-    },
     "Casgem.DataAccessLayer/1.0.0": {
       "type": "project",
       "path": "../Casgem.DataAccessLayer/Casgem.DataAccessLayer.csproj",
@@ -2081,7 +2063,8 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
-      "Casgem.BusinessLayer >= 1.0.0",
+      "Casgem.DataAccessLayer >= 1.0.0",
+      "Casgem.EntityLayer >= 1.0.0",
       "Microsoft.AspNetCore.JsonPatch >= 6.0.20",
       "Microsoft.AspNetCore.Mvc.NewtonsoftJson >= 6.0.20",
       "Microsoft.EntityFrameworkCore.Design >= 6.0.20",
@@ -2116,8 +2099,11 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\bugra\\Desktop\\1- Dosya\\1-Projeler\\casgem\\CasgemApi\\Casgem.ApıLayer\\Casgem.BusinessLayer\\Casgem.BusinessLayer.csproj": {
-              "projectPath": "C:\\Users\\bugra\\Desktop\\1- Dosya\\1-Projeler\\casgem\\CasgemApi\\Casgem.ApıLayer\\Casgem.BusinessLayer\\Casgem.BusinessLayer.csproj"
+            "C:\\Users\\bugra\\Desktop\\1- Dosya\\1-Projeler\\casgem\\CasgemApi\\Casgem.ApıLayer\\Casgem.DataAccessLayer\\Casgem.DataAccessLayer.csproj": {
+              "projectPath": "C:\\Users\\bugra\\Desktop\\1- Dosya\\1-Projeler\\casgem\\CasgemApi\\Casgem.ApıLayer\\Casgem.DataAccessLayer\\Casgem.DataAccessLayer.csproj"
+            },
+            "C:\\Users\\bugra\\Desktop\\1- Dosya\\1-Projeler\\casgem\\CasgemApi\\Casgem.ApıLayer\\Casgem.EntityLayer\\Casgem.EntityLayer.csproj": {
+              "projectPath": "C:\\Users\\bugra\\Desktop\\1- Dosya\\1-Projeler\\casgem\\CasgemApi\\Casgem.ApıLayer\\Casgem.EntityLayer\\Casgem.EntityLayer.csproj"
             }
           }
         }
