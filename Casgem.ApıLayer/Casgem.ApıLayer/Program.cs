@@ -1,8 +1,5 @@
-using Casgem.BusinessLayer.Abstract;
-using Casgem.BusinessLayer.Concrete;
-using Casgem.DataAccessLayer.Abstract;
 using Casgem.DataAccessLayer.Concrete;
-using Casgem.DataAccessLayer.EntityFramework;
+
 using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -20,18 +17,18 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews().AddNewtonsoftJson(opt => opt.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore);
 
-builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
-builder.Services.AddScoped<ICategoryService, CategoryManager>();
+//builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
+//builder.Services.AddScoped<ICategoryService, CategoryManager>();
 
 
-builder.Services.AddScoped<IProductDal, EfProductDal>();
-builder.Services.AddScoped<IProductService, ProductManager>();
+//builder.Services.AddScoped<IProductDal, EfProductDal>();
+//builder.Services.AddScoped<IProductService, ProductManager>();
 
-builder.Services.AddScoped<ICustomerDal, EfCustomerDal>();
-builder.Services.AddScoped<ICustomerService, CustomerManager>();
+//builder.Services.AddScoped<ICustomerDal, EfCustomerDal>();
+//builder.Services.AddScoped<ICustomerService, CustomerManager>();
 
 
-builder.Services.AddDbContext<Context>();
+//builder.Services.AddDbContext<Context>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle

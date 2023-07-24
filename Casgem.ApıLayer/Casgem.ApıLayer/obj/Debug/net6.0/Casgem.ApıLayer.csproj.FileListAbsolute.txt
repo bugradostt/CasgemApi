@@ -99,10 +99,8 @@ C:\Users\bugra\Desktop\1- Dosya\1-Projeler\casgem\CasgemApi\Casgem.ApıLayer\Cas
 C:\Users\bugra\Desktop\1- Dosya\1-Projeler\casgem\CasgemApi\Casgem.ApıLayer\Casgem.ApıLayer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\bugra\Desktop\1- Dosya\1-Projeler\casgem\CasgemApi\Casgem.ApıLayer\Casgem.ApıLayer\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\bugra\Desktop\1- Dosya\1-Projeler\casgem\CasgemApi\Casgem.ApıLayer\Casgem.ApıLayer\bin\Debug\net6.0\System.Diagnostics.DiagnosticSource.dll
-C:\Users\bugra\Desktop\1- Dosya\1-Projeler\casgem\CasgemApi\Casgem.ApıLayer\Casgem.ApıLayer\bin\Debug\net6.0\Casgem.BusinessLayer.dll
 C:\Users\bugra\Desktop\1- Dosya\1-Projeler\casgem\CasgemApi\Casgem.ApıLayer\Casgem.ApıLayer\bin\Debug\net6.0\Casgem.DataAccessLayer.dll
 C:\Users\bugra\Desktop\1- Dosya\1-Projeler\casgem\CasgemApi\Casgem.ApıLayer\Casgem.ApıLayer\bin\Debug\net6.0\Casgem.EntityLayer.dll
-C:\Users\bugra\Desktop\1- Dosya\1-Projeler\casgem\CasgemApi\Casgem.ApıLayer\Casgem.ApıLayer\bin\Debug\net6.0\Casgem.BusinessLayer.pdb
 C:\Users\bugra\Desktop\1- Dosya\1-Projeler\casgem\CasgemApi\Casgem.ApıLayer\Casgem.ApıLayer\bin\Debug\net6.0\Casgem.DataAccessLayer.pdb
 C:\Users\bugra\Desktop\1- Dosya\1-Projeler\casgem\CasgemApi\Casgem.ApıLayer\Casgem.ApıLayer\bin\Debug\net6.0\Casgem.EntityLayer.pdb
 C:\Users\bugra\Desktop\1- Dosya\1-Projeler\casgem\CasgemApi\Casgem.ApıLayer\Casgem.ApıLayer\obj\Debug\net6.0\Casgem.ApıLayer.csproj.AssemblyReference.cache

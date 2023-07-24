@@ -17,7 +17,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Casgem.BusinessLayer\Casgem.BusinessLayer.csproj" />
+    <ProjectReference Include="..\Casgem.DataAccessLayer\Casgem.DataAccessLayer.csproj" />
+    <ProjectReference Include="..\Casgem.EntityLayer\Casgem.EntityLayer.csproj" />
   </ItemGroup>
 
 </Project>

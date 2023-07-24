@@ -8,7 +8,8 @@
     ".NETCoreApp,Version=v6.0": {
       "Casgem.ApıLayer/1.0.0": {
         "dependencies": {
-          "Casgem.BusinessLayer": "1.0.0",
+          "Casgem.DataAccessLayer": "1.0.0",
+          "Casgem.EntityLayer": "1.0.0",
           "Microsoft.AspNetCore.JsonPatch": "6.0.20",
           "Microsoft.AspNetCore.Mvc.NewtonsoftJson": "6.0.20",
           "Microsoft.EntityFrameworkCore.Design": "6.0.20",
@@ -382,14 +383,6 @@
           }
         }
       },
-      "Casgem.BusinessLayer/1.0.0": {
-        "dependencies": {
-          "Casgem.DataAccessLayer": "1.0.0"
-        },
-        "runtime": {
-          "Casgem.BusinessLayer.dll": {}
-        }
-      },
       "Casgem.DataAccessLayer/1.0.0": {
         "dependencies": {
           "Casgem.EntityLayer": "1.0.0"
@@ -722,11 +715,6 @@
       "sha512": "sha512-jPao/LdUNLUz8rn3H1D8W7wQbZsRZM0iayvWI4xGejJg3XJHT56gcmYdgmCGPdJF1UEBqUjucCRrFB+4HbJsbw==",
       "path": "zstdsharp.port/0.6.2",
       "hashPath": "zstdsharp.port.0.6.2.nupkg.sha512"
-    },
-    "Casgem.BusinessLayer/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
     },
     "Casgem.DataAccessLayer/1.0.0": {
       "type": "project",
