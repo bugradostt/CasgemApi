@@ -2,6 +2,7 @@
 using Casgem.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using MongoDB.Bson;
 using MongoDB.Driver;
 
 namespace Casgem.ApıLayer.Controllers
@@ -27,25 +28,43 @@ namespace Casgem.ApıLayer.Controllers
         public async Task<IActionResult> ListIlan()
         {
             IMongoCollection<Ilanlar> collection = _mongoDbManager.Database.GetCollection<Ilanlar>("Ilanlar");
-            List<Ilanlar> documents = await collection.Find(x => true).ToListAsync();
+            //List<Ilanlar> documents = await collection.Find(x => true).ToListAsync();
+
+            var sortBuilder = Builders<Ilanlar>.Sort.Descending(x => x._id);
+            var documents = await collection.Find(x => true).Sort(sortBuilder).ToListAsync();
 
             return Ok(documents);
+
+        
+
+           
+
         }
 
         [HttpPost]
         public async Task<IActionResult> AddIlan(Ilanlar p)
         {
             IMongoCollection<Ilanlar> collection = _mongoDbManager.Database.GetCollection<Ilanlar>("Ilanlar");
-
-            //Ilanlar documentToAdd = new Ilanlar
-            //{
-            //    IlanAdi = "John Doe",
-            //    BinaYasi = 30,
-
-            //};
-
             collection.InsertOne(p);
             return Ok(p);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetIlanById(string id)
+        {
+            var objectId = new ObjectId(id);
+
+            IMongoCollection<Ilanlar> collection = _mongoDbManager.Database.GetCollection<Ilanlar>("Ilanlar");
+            var filter = Builders<Ilanlar>.Filter.Eq("_id", objectId);
+
+            var document = await collection.Find(filter).FirstOrDefaultAsync();
+
+            if (document == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(document);
         }
 
 
