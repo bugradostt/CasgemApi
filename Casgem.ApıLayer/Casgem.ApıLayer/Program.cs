@@ -3,8 +3,18 @@ using Casgem.BusinessLayer.Concrete;
 using Casgem.DataAccessLayer.Abstract;
 using Casgem.DataAccessLayer.Concrete;
 using Casgem.DataAccessLayer.EntityFramework;
+using MongoDB.Driver;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
+// Add services to the container.
+//var connectionString = builder.Configuration.GetConnectionString("MongoDB");
+//var databaseName = builder.Configuration.GetConnectionString("test");
+//var client = new MongoClient(connectionString);
+//var database = client.GetDatabase(databaseName);
+//builder.Services.AddSingleton<IMongoClient>(client);
+//builder.Services.AddSingleton<IMongoDatabase>(database);
 
 // Add services to the container.
 
