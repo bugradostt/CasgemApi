@@ -20,6 +20,39 @@
 <section class="locations-1" id="locations">
     <div class="locations py-5">
         <div class="container py-lg-5 py-md-4 py-2">
+
+
+            <form action="/Ilanlar/ListIlan/" method="get">
+                <div class="row">
+
+                    <div class="col-md-6"></div>
+                    <div class="col-md-4">
+                        <input type="text" placeholder="İlan adı aratınız" class="form-control" name="IlanAdi" />
+                      
+                    </div>
+
+                    <div class="col-md-1">
+
+
+
+                        <input type="submit" value="Ara"  class="btn btn-secondary"/>
+
+                    </div>
+
+                    <div class="col-md-1">
+
+                        <a href="/Ilanlar/ListIlan/" class="btn btn-danger" >Temizle</a>
+
+                    </div>
+                </div>
+               
+
+            </form>
+
+            <br />
+            <br />
+
+
             <div class="row">
 
                 @foreach (var i in Model)
@@ -44,6 +77,18 @@
                                 <li><span class="fa fa-shower"></span> @i.BanyoSayısı Banyo</li>
                                 <li><span class="fa fa-share-square-o"></span> @i.BulunduguKat. Kat</li>
                             </ul>
+
+                            <div class="author align-items-center mt-4">
+                                <a href="#img" class="comment-img">
+                                    <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="" class="img-fluid">
+                                </a>
+                                <ul class="blog-meta">
+                                    <li>
+                                        <a href="#url">@i.UserName </a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
                            
 
                             <hr>

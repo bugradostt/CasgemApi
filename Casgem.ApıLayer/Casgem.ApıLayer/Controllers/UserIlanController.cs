@@ -1,4 +1,5 @@
 ﻿using Amazon.Runtime;
+using Casgem.ApıLayer.Dtos.Ilanlar;
 using Casgem.DataAccessLayer.Concrete;
 using Casgem.EntityLayer.Concrete;
 using Microsoft.AspNetCore.Http;
@@ -12,7 +13,7 @@ using System.Text;
 
 namespace Casgem.ApıLayer.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class UserIlanController : ControllerBase
     {
@@ -42,7 +43,44 @@ namespace Casgem.ApıLayer.Controllers
 
         }
 
-        [HttpPost]
+        [HttpGet("{UserName}")]
+        public async Task<IActionResult> UserName(string UserName)
+        {
+            IMongoCollection<Ilanlar> collection = _mongoDbManager.Database.GetCollection<Ilanlar>("Ilanlar");
+
+            var filterBuilder = Builders<Ilanlar>.Filter;
+            var filter = filterBuilder.Empty;
+
+            if (!string.IsNullOrEmpty(UserName))
+            {
+                filter &= filterBuilder.Regex("UserName", new BsonRegularExpression(UserName, "i")); // "i" parametresi büyük/küçük harf duyarlılığı olmaksızın eşleştirme yapar.
+            }
+
+            var values = await collection.Find(filter).ToListAsync();
+            //var products = dbContext.Products.Find(filter).ToList();
+            return Ok(values);
+        }
+
+        [HttpGet("{IlanAdi}")]
+		public async Task<IActionResult> Search(string IlanAdi)
+		{
+			IMongoCollection<Ilanlar> collection = _mongoDbManager.Database.GetCollection<Ilanlar>("Ilanlar");
+
+			var filterBuilder = Builders<Ilanlar>.Filter;
+			var filter = filterBuilder.Empty;
+
+			if (!string.IsNullOrEmpty(IlanAdi))
+			{
+				filter &= filterBuilder.Regex("IlanAdi", new BsonRegularExpression(IlanAdi, "i")); // "i" parametresi büyük/küçük harf duyarlılığı olmaksızın eşleştirme yapar.
+			}
+
+            var values = await collection.Find(filter).ToListAsync();   
+			//var products = dbContext.Products.Find(filter).ToList();
+			return Ok(values);
+		}
+
+
+		[HttpPost]
         public async Task<IActionResult> AddIlan(Ilanlar p)
         {
             p.IlanTarihi = DateTime.Now;
@@ -112,13 +150,29 @@ namespace Casgem.ApıLayer.Controllers
         //    return Ok("Güncellendi");
         //}
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateIlan(Ilanlar p)
+        [HttpPut("{_id}")]
+        public async Task<IActionResult> UpdateIlan(string _id, Ilanlar p)
         {
-            var objectId = new ObjectId(p._id.ToString());
+            var objectId = new ObjectId(_id.ToString());
 
             IMongoCollection<Ilanlar> collection = _mongoDbManager.Database.GetCollection<Ilanlar>("Ilanlar");
             var value = Builders<Ilanlar>.Filter.Eq("_id", objectId);
+
+            collection.ReplaceOne(x => x._id == objectId, p);
+
+
+          
+            return Ok("Güncellendi");
+        }
+
+
+		[HttpPut]
+		public async Task<IActionResult> UpdateIlan1(string id, UpdateIlanDto p)
+		{
+			var objectId = new ObjectId(id);
+
+			IMongoCollection<Ilanlar> collection = _mongoDbManager.Database.GetCollection<Ilanlar>("Ilanlar");
+			var value = Builders<Ilanlar>.Filter.Eq("_id", objectId);
 
             var update = Builders<Ilanlar>.Update
                 .Set(x => x.ImageUrl, p.ImageUrl)
@@ -136,9 +190,9 @@ namespace Casgem.ApıLayer.Controllers
                 .Set(x => x.BinaYasi, p.BinaYasi)
                 .Set(x => x.OdaSayisi, p.OdaSayisi);
 
-            var result = await collection.UpdateOneAsync(value, update);
-            return Ok("Güncellendi");
-        }
+			var result = await collection.UpdateOneAsync(value, update);
+			return Ok("Güncellendi");
+		}
 
 
 
@@ -153,5 +207,6 @@ namespace Casgem.ApıLayer.Controllers
 
 
 
-    }
+
+	}
 }

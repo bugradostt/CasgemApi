@@ -2,7 +2,7 @@
 {
     public class EditIlanDto
     {
-        public string _id { get; set; }
+        public string id { get; set; }
 
         public string ImageUrl { get; set; } // kiralık , satılık
 

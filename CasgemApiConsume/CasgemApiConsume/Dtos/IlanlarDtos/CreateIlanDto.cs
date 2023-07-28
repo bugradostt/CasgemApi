@@ -21,5 +21,6 @@
         public string BalkonSayısı { get; set; }
         public string Kimden { get; set; }
         public string Takas { get; set; }
+        public string UserName { get; set; }
     }
 }

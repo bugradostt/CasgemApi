@@ -28,6 +28,8 @@ namespace Casgem.EntityLayer.Concrete
         public int BinaYasi { get; set; }
         public string OdaSayisi { get; set; }
 
+        public string UserName { get; set; }
+
         //public int KullaniciId { get; set; }
 
 
