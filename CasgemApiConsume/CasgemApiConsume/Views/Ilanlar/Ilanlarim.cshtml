@@ -1,0 +1,74 @@
+﻿@model List<CasgemApiConsume.Dtos.IlanlarDtos.ResultIlanlarDto>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<section class="w3l-about-breadcrumb">
+    <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
+        <div class="container pt-lg-5 py-3">
+        </div>
+    </div>
+</section>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="/Home/Index/">Kullanıcı İşlemleri</a></li>
+            <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> İlanlar</li>
+        </ul>
+    </div>
+</section>
+
+<div class="container">
+
+    <br />
+    <br />
+    <a class="btn btn-success" href="/Ilanlarim/AddIlan/">Ekle</a>
+    <hr />
+
+    <table class="table table-striped">
+
+        <tr>
+            <th>#</th>
+            <th>İlan Fotoğrafı</th>
+            <th>İlan Adı</th>
+            <th>Şehir</th>
+            <th>Fiyatı</th>
+            <th></th>
+            <th></th>
+
+        </tr>
+
+        @{
+            int a = 1;
+        }
+        @foreach (var i in Model)
+        {
+
+            <tr>
+                <th>@a</th>
+                <td>
+                    <img src="@i.ImageUrl" width="150"/>
+                </td>
+                <td>@i.IlanAdi</td>
+                <td>@i.Sehir</td>
+                <td>@i.Ucret ₺</td>
+                <td>
+                    <a class="btn btn-danger" href="/Ilanlar/DeleteIlan/@i._id">Sil</a>
+                </td>
+                <td>
+                    <a class="btn btn-warning" href="/Ilanlar/EditIlan/@i._id">Güncelle</a>
+                </td>
+            </tr>
+
+            a++;
+        }
+
+    </table>
+
+   
+
+</div>
+
+

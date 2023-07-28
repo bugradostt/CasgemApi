@@ -1,0 +1,185 @@
+﻿@model CasgemApiConsume.Dtos.IlanlarDtos.GetByIdIlanlarDto
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="w3l-about-breadcrumb">
+    <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
+        <div class="container pt-lg-5 py-3">
+        </div>
+    </div>
+</section>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="/Ilanlar/ListIlan/">İlanlar</a></li>
+            <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> İlan Detayı</li>
+        </ul>
+    </div>
+</section>
+
+
+<section class="w3l-blog post-content py-5">
+    <div class="container py-lg-4 py-md-3 py-2">
+
+
+       
+            <div class="post-content">
+                <h2 class="title-single"> @Html.ValueFor(x=>x.IlanAdi)</h2>
+            </div>
+            <br />
+
+            <div class="row">
+                <div class="col-lg-7 w3l-news">
+
+                    <div class="blog-single-post">
+                        <div class="single-post-image mb-5">
+                            <div class="owl-blog owl-carousel owl-theme">
+                                <div class="item">
+                                    <div class="card">
+                                    <img src="@Html.ValueFor(x=>x.ImageUrl)" class="img-fluid radius-image" alt="image">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div>
+                            <h1>İlan Detayı</h1>
+                            <br />
+                            <span style="text-align:justify; font-weight:bold" >
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+                            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+                            , when an unknown printer took a galley of type and scrambled it to make a 
+                            type specimen book. It has survived not only five centuries, but also the
+                            leap into electronic typesetting, remaining essentially unchanged. 
+                            It was popularised in the 1960s with the release of Letraset sheets 
+                            containing Lorem Ipsum passages, and more recently with desktop publishing
+                            software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </span>
+                        </div>
+
+
+
+
+                    </div>
+                </div>
+                <div class="sidebar-side col-lg-5 col-md-12 col-sm-12 mt-lg-0 mt-5">
+                    <aside class="sidebar">
+
+                        <div class="single-bg-white">
+                            <ul class="share-post">
+                            <a href="#url" class="cost-estate m-o">@Html.ValueFor(x=>x.Ucret) ₺</a>
+                            </ul>
+
+                            <table class="table table-striped">
+                               
+                                <tr>
+                                    <th>İlan No</th>
+                                    <th>:</th>
+                                    <td> @Html.ValueFor(x=>x._id)</td>
+                                </tr>
+
+                                <tr>
+                                    <th>İlan Tarihi</th>
+                                    <th>:</th>
+                                <td>@Html.ValueFor(x=>x.IlanTarihi)</td>
+                                </tr>
+
+                               
+                                <tr>
+                                    <th>Banyo Sayısı</th>
+                                    <th>:</th>
+                                <td>@Html.ValueFor(x=>x.BanyoSayısı)</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Balkon</th>
+                                    <th>:</th>
+                                <td>@Html.ValueFor(x=>x.BalkonSayısı)</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Şehir</th>
+                                    <th>:</th>
+                                    <td> @Html.ValueFor(x=>x.Sehir)</td>
+                                </tr>
+
+
+                                <tr>
+                                    <th>Tipi</th>
+                                    <th>:</th>
+                                    <td> @Html.ValueFor(x=>x.Tipi)</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Eşyalı</th>
+                                    <th>:</th>
+                                    <td>
+                                        @if (Html.ValueFor(x => x.Esyali)==true.ToString())
+                                        {
+                                             <span>Evet</span>
+                                        }
+                                        else
+                                        {
+                                            <span>Hayır</span>
+                                        }
+
+                                    </td>
+                                </tr>
+
+                                <tr>
+                                    <th>Kat Sayısı</th>
+                                    <th>:</th>
+                                    <td> @Html.ValueFor(x=>x.KatSayisi)</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Bulunduğu Kat</th>
+                                    <th>:</th>
+                                    <td> @Html.ValueFor(x=>x.BulunduguKat)</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Oda Sayısı</th>
+                                    <th>:</th>
+                                    <td> @Html.ValueFor(x=>x.OdaSayisi)</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Bina Yaşı</th>
+                                    <th>:</th>
+                                    <td> @Html.ValueFor(x=>x.BinaYasi)</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Kimden</th>
+                                    <th>:</th>
+                                <td>@Html.ValueFor(x=>x.Kimden)</td>
+                                </tr>
+
+                                <tr>
+                                    <th>Takas</th>
+                                    <th>:</th>
+                                    <td>
+                                    @if (Html.ValueFor(x => x.Takas) == true.ToString())
+                                    {
+                                        <span>Evet</span>
+                                    }
+                                    else
+                                    {
+                                        <span>Hayır</span>
+                                    }
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+
+
+        
+       
+    </div>
+</section>

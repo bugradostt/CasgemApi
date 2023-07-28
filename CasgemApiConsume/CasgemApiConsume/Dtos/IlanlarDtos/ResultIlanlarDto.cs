@@ -17,5 +17,12 @@ namespace CasgemApiConsume.Dtos.IlanlarDtos
         public string BulunduguKat { get; set; }
         public int BinaYasi { get; set; }
         public string OdaSayisi { get; set; }
+
+        public DateTime IlanTarihi { get; set; }
+       
+        public string BanyoSayısı { get; set; }
+        public string BalkonSayısı { get; set; }
+        public string Kimden { get; set; }
+        public string Takas { get; set; }
     }
 }

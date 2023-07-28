@@ -1,0 +1,52 @@
+﻿@model CasgemApiConsume.Dtos.UserDtos.EditUserDto
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<section class="w3l-about-breadcrumb">
+    <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
+        <div class="container pt-lg-5 py-3">
+        </div>
+    </div>
+</section>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="/Ilanlar/ListIlan/">Kullanıcı İşlemleri</a></li>
+            <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> Kullanıcılar</li>
+        </ul>
+    </div>
+</section>
+<div class="container">
+
+    <form method="post">
+        <input type="hidden" class="form-control" asp-for="_id" />
+
+
+        <div class="mb-3">
+            <label>Kullanıcı Adı</label>
+            <input type="text" class="form-control" placeholder="Kullanıcı Adı" asp-for="UserName" />
+        </div>
+
+
+        <div class="mb-3">
+            <label>Şifre</label>
+            <input type="password" class="form-control" placeholder="Şifre" asp-for="UserPassword" />
+        </div>
+
+
+
+        <div class="mb-3">
+
+            <a class="btn btn-danger" href="/User/Index/">İptal</a>
+            <input type="submit" class="btn btn-warning" value="Güncelle" />
+        </div>
+
+
+    </form>
+
+</div>

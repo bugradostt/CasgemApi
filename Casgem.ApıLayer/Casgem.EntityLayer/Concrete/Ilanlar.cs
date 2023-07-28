@@ -14,7 +14,12 @@ namespace Casgem.EntityLayer.Concrete
         public string ImageUrl { get; set; } // kiralık , satılık
 
         public string IlanAdi { get; set; }
+        public DateTime IlanTarihi { get; set; }
         public string Ucret { get; set; }
+        public string BanyoSayısı { get; set; }
+        public string BalkonSayısı { get; set; }
+        public string Kimden { get; set; }
+        public string Takas { get; set; }
         public string Sehir { get; set; }
         public string Tipi { get; set; } // kiralık , satılık
         public bool Esyali { get; set;}

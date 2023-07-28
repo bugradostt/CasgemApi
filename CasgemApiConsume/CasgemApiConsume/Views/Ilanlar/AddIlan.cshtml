@@ -1,0 +1,129 @@
+﻿@model CasgemApiConsume.Dtos.IlanlarDtos.CreateIlanDto
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<section class="w3l-about-breadcrumb">
+    <div class="breadcrumb-bg breadcrumb-bg-about pt-5">
+        <div class="container pt-lg-5 py-3">
+        </div>
+    </div>
+</section>
+<section class="w3l-breadcrumb">
+    <div class="container">
+        <ul class="breadcrumbs-custom-path">
+            <li><a href="/Ilanlar/ListIlan/">İlanlar</a></li>
+            <li class="active"><span class="fa fa-angle-right mx-2" aria-hidden="true"></span> İlan Ekle</li>
+        </ul>
+    </div>
+</section>
+<div class="container">
+
+    <form method="post">
+
+        <div class="mb-3">
+            <label>Fotoğraf Url</label>
+            <input type="text" class="form-control" placeholder="Fotoğraf Url" asp-for="ImageUrl" />
+        </div>
+
+
+        <div class="mb-3">
+            <label>İlan Adı</label>
+            <input type="text" class="form-control" placeholder="İlan Adı" asp-for="IlanAdi" />
+        </div>
+
+        <div class="mb-3">
+            <label>Fiyatı</label>
+            <input type="text" class="form-control" placeholder="Fiyatı" asp-for="Ucret" />
+        </div>
+
+        <div class="mb-3">
+            <label>Şehir</label>
+            <input type="text" class="form-control" placeholder="Şehir" asp-for="Sehir" />
+        </div>
+
+        <div class="mb-3">
+            <label>Tipi</label>
+            <select class="form-control" asp-for="Tipi">
+                <option>Seçiniz</option>
+                <option value="Kiralık">Kiralık</option>
+                <option value="Satılık">Satılık</option>
+            </select>
+           
+        </div>
+
+        <div class="mb-3">
+            <label>Eşyalı</label>
+            <select class="form-control" asp-for="Esyali">
+                <option>Seçiniz</option>
+                <option value="true">Evet</option>
+                <option value="false">Hayır</option>
+            </select>
+          
+        </div>
+
+        <div class="mb-3">
+            <label>Kat sayısı </label>
+            <input type="text" class="form-control" placeholder="Kat sayısı" asp-for="KatSayisi" />
+        </div>
+
+        <div class="mb-3">
+            <label>Bulunduğu Kat </label>
+            <input type="text" class="form-control" placeholder="Bulunduğu kat" asp-for="BulunduguKat" />
+        </div>
+
+        <div class="mb-3">
+            <label>Bina Yaşı </label>
+            <input type="text" class="form-control" placeholder="Bina yaşı" asp-for="BinaYasi" />
+        </div>
+
+        <div class="mb-3">
+            <label>Oda Sayısı </label>
+            <input type="text" class="form-control" placeholder="Oda Sayısı" asp-for="OdaSayisi" />
+        </div>
+
+        <div class="mb-3">
+            <label>Banyo Sayısı </label>
+            <input type="text" class="form-control" placeholder="Banyo Sayısı" asp-for="BanyoSayısı" />
+        </div>
+
+        <div class="mb-3">
+            <label>Balkon Sayısı </label>
+            <input type="text" class="form-control" placeholder="Balkon Sayısı" asp-for="BalkonSayısı" />
+        </div>
+
+        <div class="mb-3">
+            <label>Kimden</label>
+            <select class="form-control" asp-for="Kimden">
+                <option>Seçiniz</option>
+                <option value="Sahibinden">Sahibinden</option>
+                <option value="Emlak">Emlak</option>
+            </select>
+          
+        </div>
+
+        <div class="mb-3">
+            <label>Takas</label>
+            <select class="form-control" asp-for="Takas">
+                <option>Seçiniz</option>
+                <option value="true">Evet</option>
+                <option value="false">Hayır</option>
+            </select>
+           
+        </div>
+
+
+        <div class="mb-3">
+          
+            <a class="btn btn-danger" href="/Ilanlar/ListIlan/" >İptal</a>
+            <input type="submit" class="btn btn-success" value="Kaydet" />
+        </div>
+
+
+    </form>
+
+</div>
